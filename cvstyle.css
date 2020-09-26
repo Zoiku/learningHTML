@@ -1,0 +1,38 @@
+body{
+    margin: 70px;
+}
+
+#content{
+    display: flex;
+}
+
+section{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.sectionbox{
+    width: 50%;
+}
+
+#right{
+    text-align: right;
+}
+
+h3{
+    text-transform: uppercase;
+    font-size: 8.5;
+    font-family: Verdana;
+    margin-bottom: 0px;
+}
+
+section{
+    line-height: 24px;
+}
+
+.xpSection{
+    margin: 20px;
+}
+
+ul{
+    margin: 1px;
+}
