@@ -23,6 +23,9 @@ const validateForm = () => {
         const mail = email.value.trim();
         const addy = address.value.trim();  
 
+        const regTelephone = /^[\d]{10}$/gi;
+        const telephoneV = false;
+
         if(!first){
             document.getElementById("firstnameinput").style = "border: 2px solid red";
             document.getElementById("error1").innerHTML = "Empty field";
@@ -43,8 +46,15 @@ const validateForm = () => {
             document.getElementById("telephone").style = "border: 2px solid red";
             document.getElementById("error4").innerHTML = "Empty field";
         } else {
-            document.getElementById("telephone").style = "border: 2px yellowgreen solid";
-            document.getElementById("error4").innerHTML = "";
+            if(regTelephone.test(tel)){
+                document.getElementById("telephone").style = "border: 2px yellowgreen solid";
+                document.getElementById("error4").innerHTML = "";
+                telephoneV = true;
+            }
+            else{
+                document.getElementById("telephone").style = "border: 2px solid red";
+                document.getElementById("error4").innerHTML = "Invalid Mobile Number";
+            }
         }
 
         if(!mail){
@@ -63,12 +73,11 @@ const validateForm = () => {
             document.getElementById("error6").innerHTML = "";
         }
 
-        if(!!first && !!last && !!tel && !!mail && !!addy){
+        if(!!first && !!last && telephoneV && !!mail && !!addy){
             window.alert(`Hey ${first} ${last}, form submitted`);
             return true;
         } 
         else {
-            window.alert("Empty fields rquired");
             return false;
         }
 }
