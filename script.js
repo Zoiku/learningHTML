@@ -24,7 +24,7 @@ const validateForm = () => {
         const addy = address.value.trim();  
 
         const regTelephone = /^\d{10}$/gi;
-        const telephoneV = false;
+        var telephoneV = false;
 
         if(!first){
             document.getElementById("firstnameinput").style = "border: 2px solid red";
@@ -54,6 +54,7 @@ const validateForm = () => {
             else{
                 document.getElementById("telephone").style = "border: 2px solid red";
                 document.getElementById("error4").innerHTML = "Invalid Mobile Number";
+                telephoneV = false;
             }
         }
 
@@ -73,8 +74,11 @@ const validateForm = () => {
             document.getElementById("error6").innerHTML = "";
         }
 
-        if(!!first && !!last && telephoneV == "true" && !!mail && !!addy){
+
+        if(!!first && !!last && !!telephoneV && !!mail && !!addy){
             window.alert(`Hey ${first} ${last}, form submitted`);
+            window.alert(telephoneV);
+            window.alert(first);
             return true;
         } 
         else {
