@@ -23,7 +23,7 @@ const validateForm = () => {
         const mail = email.value.trim();
         const addy = address.value.trim();  
 
-        const regTelephone = /^[\d]{10}$/gi;
+        const regTelephone = /^\d{10}$/gi;
         const telephoneV = false;
 
         if(!first){
@@ -73,7 +73,7 @@ const validateForm = () => {
             document.getElementById("error6").innerHTML = "";
         }
 
-        if(!!first && !!last && telephoneV && !!mail && !!addy){
+        if(!!first && !!last && telephoneV == "true" && !!mail && !!addy){
             window.alert(`Hey ${first} ${last}, form submitted`);
             return true;
         } 
