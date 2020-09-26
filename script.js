@@ -8,13 +8,6 @@ const email = document.getElementById("emailinput");
 const address = document.getElementById("addressinput"); 
 
 
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     validateForm();
-    
-// });
-
 const validateForm = () => {
         const first = firstname.value.trim();
         // const middle = middlename.value.trim();
@@ -76,9 +69,7 @@ const validateForm = () => {
 
 
         if(!!first && !!last && !!telephoneV && !!mail && !!addy){
-            window.alert(`Hey ${first} ${last}, form submitted`);
-            window.alert(telephoneV);
-            window.alert(first);
+            window.alert(`Hey ${first} ${last}, Form Submission Successful`);
             return true;
         } 
         else {
